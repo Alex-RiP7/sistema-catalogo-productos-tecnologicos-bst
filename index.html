@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos Tecnológicos - BST</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>💻 Sistema de Catálogo de Productos Tecnológicos</h1>
+        <p>Árbol Binario de Búsqueda (BST) • Abstracción • Encapsulamiento • Modularidad</p>
+    </header>
+
+    <main>
+        <section class="panel">
+            <h2>Agregar Producto</h2>
+            <form id="formProducto">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="codigo">Código (clave BST)</label>
+                        <input type="text" id="codigo" required placeholder="Ej. TECH001">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" required placeholder="Nombre del producto">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" required>
+                            <option value="">Selecciona...</option>
+                            <option value="Laptop">Laptop</option>
+                            <option value="Smartphone">Smartphone</option>
+                            <option value="Tablet">Tablet</option>
+                            <option value="Audífonos">Audífonos</option>
+                            <option value="Monitor">Monitor</option>
+                            <option value="Teclado">Teclado</option>
+                            <option value="Mouse">Mouse</option>
+                            <option value="Accesorio">Accesorio</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio ($)</label>
+                        <input type="number" id="precio" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock</label>
+                        <input type="number" id="stock" min="0" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" id="descripcion" placeholder="Descripción breve">
+                </div>
+                <button type="submit" class="btn primary">Insertar en el Árbol</button>
+            </form>
+            <div id="mensaje" class="mensaje"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Operaciones</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="buscarCodigo">Buscar / Eliminar por código</label>
+                    <input type="text" id="buscarCodigo" placeholder="Código del producto">
+                </div>
+                <button id="btnBuscar" class="btn">Buscar</button>
+                <button id="btnEliminar" class="btn danger">Eliminar</button>
+            </div>
+            <div id="resultadoBusqueda" class="resultado"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Catálogo Ordenado (Inorden)</h2>
+            <div id="catalogo" class="lista"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Recorridos del Árbol</h2>
+            <div class="recorridos">
+                <div>
+                    <h3>Inorden</h3>
+                    <div id="inorden" class="recorrido"></div>
+                </div>
+                <div>
+                    <h3>Preorden</h3>
+                    <div id="preorden" class="recorrido"></div>
+                </div>
+                <div>
+                    <h3>Postorden</h3>
+                    <div id="postorden" class="recorrido"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Estadísticas del Árbol</h2>
+            <div id="stats" class="stats-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Sistema de Catálogo Tecnológico • Árbol Binario de Búsqueda • Proyecto académico</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
